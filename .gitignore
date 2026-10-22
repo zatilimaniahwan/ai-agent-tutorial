@@ -150,7 +150,7 @@ activemq-data/
 *.sage.py
 
 # Environments
-Day1/.env
+.env
 .envrc
 .venv
 env/
