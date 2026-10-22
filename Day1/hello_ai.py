@@ -1,8 +1,9 @@
 from openai import OpenAI
-from constant import BASE_URL,API_KEY,MODEL
+from utils.constant import BASE_URL,API_KEY,MODEL
 
-client = OpenAI(base_url=BASE_URL,api_key=API_KEY)
-response = client.chat.completions.create(
+def main() -> None:
+    client = OpenAI(base_url=BASE_URL,api_key=API_KEY)
+    response = client.chat.completions.create(
     model=MODEL,
     messages=[
         {
@@ -11,4 +12,7 @@ response = client.chat.completions.create(
         }
     ]
 )
-print(response.choices[0].message.content)
+    print(response.choices[0].message.content)
+
+if __name__ == "__main__":
+    main()
